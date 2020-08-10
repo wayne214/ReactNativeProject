@@ -75,7 +75,9 @@ const DetailScreen = ({ route, navigation }) => {
   const { otherParam } = route.params;
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>DetailScreen: {itemId} {otherParam}</Text>
+      <Text>DetailScreen</Text>
+      <Text>Itemid: {JSON.stringify(itemId)}</Text>
+      <Text>otherParam: {JSON.stringify(otherParam)}</Text>
       <Button
         title="Go to Detail Again"
         // onPress={() => navigation.navigate('Detail')}
