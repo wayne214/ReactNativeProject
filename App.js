@@ -52,7 +52,7 @@ const SettingsScreen = ({ navigation }) => {
       <Text>SettingScreen</Text>
       <Button
         title="Go to Details"
-        onPress={() => navigation.navigate('Detail')}
+        onPress={() => navigation.navigate('Detail', {itemId: 88, otherParam: 'anything you want here'})}
       />
     </View>
   )
@@ -64,7 +64,7 @@ const HomeScreen = ({ navigation }) => {
       <Text>HomeScreen</Text>
       <Button
         title="Go to Details"
-        onPress={() => navigation.navigate('Detail')}
+        onPress={() => navigation.navigate('Detail', {itemId: 66, otherParam: 'anything you want here'})}
       />
     </View>
   )
@@ -75,11 +75,13 @@ const DetailScreen = ({ route, navigation }) => {
   const { otherParam } = route.params;
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>DetailScreen: {itemId} {otherParam}</Text>
+      <Text>DetailScreen</Text>
+      <Text>Itemid: {JSON.stringify(itemId)}</Text>
+      <Text>otherParam: {JSON.stringify(otherParam)}</Text>
       <Button
         title="Go to Detail Again"
         // onPress={() => navigation.navigate('Detail')}
-        onPress={() => navigation.push('Detail')}
+        onPress={() => navigation.push('Detail', {itemId: 99, otherParam: 'anything you want here'})}
       />
       <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
       <Button title="Go back" onPress={() => navigation.goBack()} />
